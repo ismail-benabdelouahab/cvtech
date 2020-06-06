@@ -51,7 +51,13 @@ export class CvService {
     return this.http.delete(this.link + `/${id}`);
   }
   updatePersonne(personne: Personne) {
-    console.log(personne);
     return this.http.put(this.link, personne);
+  }
+
+  findByName(name: string): Observable<Personne[]> {
+    const filter = `{"where":{"name":{"like":"%${name}%"}}}`;
+    console.log(filter);
+    const params = new HttpParams().set('filter', filter);
+    return this.http.get<Personne[]>(this.link, {params});
   }
 }
