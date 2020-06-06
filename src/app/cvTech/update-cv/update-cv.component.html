@@ -1,1 +1,25 @@
-<p>update-cv works!</p>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{errorMessage}}
+</div>
+
+<form #formulaire="ngForm" *ngIf="personne">
+    <label for="name">Name</label>
+    <input id="name" required type="text" [(ngModel)]="personne.name" name="name" class="form-control" required>
+
+    <label for="firstname">Firstname</label>
+    <input id="firstname" required type="text" [(ngModel)]="personne.firstname" name="firstname" class="form-control">
+    
+    <label for="job">Job</label>
+    <input id="job" required type="text" [(ngModel)]="personne.job" name="job" class="form-control">
+    
+    <label for="age">Age</label>
+    <input id="age" min="18" max="65" required type="number" [(ngModel)]="personne.age" name="age" class="form-control">
+    
+    <label for="cin">Cin</label>
+    <input id="cin" minlength="7" maxlength="7" required type="number" [(ngModel)]="personne.cin" name="cin" class="form-control">
+    
+    <label for="path">Path</label>
+    <input id="path" type="text" [(ngModel)]="personne.path" name="path" class="form-control">
+    
+    <button [disabled]="formulaire.invalid" class="btn btn-primary" (click)="updatePersonne()">Envoyer</button>
+</form>
