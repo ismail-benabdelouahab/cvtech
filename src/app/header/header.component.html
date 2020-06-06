@@ -11,14 +11,17 @@
         <a class="nav-item nav-link" [routerLink]="['cv']" routerLinkActive="active">
             CV
         </a>
-        <a class="nav-item nav-link" [routerLink]="['cv/add']" routerLinkActive="active">
+        <a class="nav-item nav-link" *ngIf="isloged()" [routerLink]="['cv/add']" routerLinkActive="active">
             Add Cv
         </a>
         <a class="nav-item nav-link" [routerLink]="['color']" routerLinkActive="active">
             Color
         </a>
-        <a class="nav-item nav-link" [routerLink]="['login']" routerLinkActive="active">
+        <a class="nav-item nav-link" *ngIf="!isloged()" [routerLink]="['login']" routerLinkActive="active">
             Login
+        </a>
+        <a class="nav-item nav-link" *ngIf="isloged()" (click)="logout()">
+            Logout
         </a>
       </div>
     </div>

@@ -31,14 +31,13 @@
     }
   },
   "validations": [],
-  "relations": {}
-  ,
+  "relations": {},
   "acls": [
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALOW"
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
     }
   ],
   "methods": {}

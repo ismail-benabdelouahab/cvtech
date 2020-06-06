@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from '../authentification.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthentificationService
+  ) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
+  isloged() {
+    return this.authService.isLoged();
+  }
 }

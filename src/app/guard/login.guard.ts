@@ -3,8 +3,9 @@ import { Observable } from 'rxjs';
 
 
 export class LoginGuard implements CanActivate {
-    canActivate(route: ActivatedRouteSnapshot,
-                state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    canActivate(
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
         const token = localStorage.getItem('token');
         return (!! token);
     }
