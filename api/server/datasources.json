@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "IsmailDb": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "anguforma",
+    "password": "admin",
+    "name": "IsmailDb",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
